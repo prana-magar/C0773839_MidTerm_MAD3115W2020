@@ -16,12 +16,12 @@ struct PasswordUtil {
         return PasswordUtil.randomStr
     }
     
-    static func getHash(plainPassword: String, salt: String) -> String{
+    static func getHashedPassword(plainPassword: String, salt: String) -> String{
         return plainPassword + salt
     }
     
     static func validate(plainPassword: String, salt: String, hashPassword: String) -> Bool{
-        return getHash(plainPassword: plainPassword, salt: salt) ==  hashPassword
+        return getHashedPassword(plainPassword: plainPassword, salt: salt) ==  hashPassword
     }
     
 }

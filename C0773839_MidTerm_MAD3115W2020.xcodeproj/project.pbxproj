@@ -15,6 +15,16 @@
 		AB06C25324101F2500961991 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB06C25124101F2500961991 /* LaunchScreen.storyboard */; };
 		AB06C25E2410241100961991 /* student.png in Resources */ = {isa = PBXBuildFile; fileRef = AB06C25D2410241100961991 /* student.png */; };
 		AB06C26224105D2C00961991 /* PasswordUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C26124105D2C00961991 /* PasswordUtil.swift */; };
+		AB06C26424105F2000961991 /* ObjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C26324105F2000961991 /* ObjectManager.swift */; };
+		AB06C2662410600500961991 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C2652410600500961991 /* Admin.swift */; };
+		AB06C2682410606F00961991 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C2672410606F00961991 /* Person.swift */; };
+		AB06C26A241060F000961991 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C269241060F000961991 /* Contact.swift */; };
+		AB06C26C2410611F00961991 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C26B2410611F00961991 /* Validations.swift */; };
+		AB06C26E2410614A00961991 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C26D2410614A00961991 /* Address.swift */; };
+		AB06C271241061BE00961991 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C270241061BE00961991 /* String+Extensions.swift */; };
+		AB06C273241061D200961991 /* Float+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C272241061D200961991 /* Float+Extensions.swift */; };
+		AB06C275241061E600961991 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C274241061E600961991 /* Double+Extensions.swift */; };
+		AB06C2772410620100961991 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C2762410620100961991 /* Date+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +38,16 @@
 		AB06C25424101F2500961991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB06C25D2410241100961991 /* student.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = student.png; sourceTree = "<group>"; };
 		AB06C26124105D2C00961991 /* PasswordUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordUtil.swift; sourceTree = "<group>"; };
+		AB06C26324105F2000961991 /* ObjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectManager.swift; sourceTree = "<group>"; };
+		AB06C2652410600500961991 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
+		AB06C2672410606F00961991 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		AB06C269241060F000961991 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		AB06C26B2410611F00961991 /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
+		AB06C26D2410614A00961991 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		AB06C270241061BE00961991 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		AB06C272241061D200961991 /* Float+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extensions.swift"; sourceTree = "<group>"; };
+		AB06C274241061E600961991 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		AB06C2762410620100961991 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +81,7 @@
 		AB06C24524101F2400961991 /* C0773839_MidTerm_MAD3115W2020 */ = {
 			isa = PBXGroup;
 			children = (
+				AB06C26F2410619E00961991 /* Extensions */,
 				AB06C26024105CF600961991 /* Helper */,
 				AB06C25F24105CC400961991 /* Model */,
 				AB06C24624101F2400961991 /* AppDelegate.swift */,
@@ -85,6 +106,11 @@
 		AB06C25F24105CC400961991 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB06C26324105F2000961991 /* ObjectManager.swift */,
+				AB06C2652410600500961991 /* Admin.swift */,
+				AB06C2672410606F00961991 /* Person.swift */,
+				AB06C269241060F000961991 /* Contact.swift */,
+				AB06C26D2410614A00961991 /* Address.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -93,8 +119,20 @@
 			isa = PBXGroup;
 			children = (
 				AB06C26124105D2C00961991 /* PasswordUtil.swift */,
+				AB06C26B2410611F00961991 /* Validations.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		AB06C26F2410619E00961991 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB06C270241061BE00961991 /* String+Extensions.swift */,
+				AB06C272241061D200961991 /* Float+Extensions.swift */,
+				AB06C274241061E600961991 /* Double+Extensions.swift */,
+				AB06C2762410620100961991 /* Date+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,9 +208,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB06C24B24101F2400961991 /* LoginViewController.swift in Sources */,
+				AB06C275241061E600961991 /* Double+Extensions.swift in Sources */,
+				AB06C271241061BE00961991 /* String+Extensions.swift in Sources */,
 				AB06C24724101F2400961991 /* AppDelegate.swift in Sources */,
 				AB06C26224105D2C00961991 /* PasswordUtil.swift in Sources */,
+				AB06C26424105F2000961991 /* ObjectManager.swift in Sources */,
+				AB06C26E2410614A00961991 /* Address.swift in Sources */,
+				AB06C26C2410611F00961991 /* Validations.swift in Sources */,
+				AB06C26A241060F000961991 /* Contact.swift in Sources */,
+				AB06C2772410620100961991 /* Date+Extensions.swift in Sources */,
+				AB06C2682410606F00961991 /* Person.swift in Sources */,
 				AB06C24924101F2400961991 /* SceneDelegate.swift in Sources */,
+				AB06C273241061D200961991 /* Float+Extensions.swift in Sources */,
+				AB06C2662410600500961991 /* Admin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
