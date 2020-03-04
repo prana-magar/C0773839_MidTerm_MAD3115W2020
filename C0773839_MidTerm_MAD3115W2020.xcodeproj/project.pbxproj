@@ -13,6 +13,7 @@
 		AB06C24E24101F2400961991 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB06C24C24101F2400961991 /* Main.storyboard */; };
 		AB06C25024101F2500961991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB06C24F24101F2500961991 /* Assets.xcassets */; };
 		AB06C25324101F2500961991 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB06C25124101F2500961991 /* LaunchScreen.storyboard */; };
+		AB06C25E2410241100961991 /* student.png in Resources */ = {isa = PBXBuildFile; fileRef = AB06C25D2410241100961991 /* student.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AB06C24F24101F2500961991 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB06C25224101F2500961991 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB06C25424101F2500961991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB06C25D2410241100961991 /* student.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = student.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		AB06C23A24101F2300961991 = {
 			isa = PBXGroup;
 			children = (
+				AB06C25A2410239000961991 /* images */,
 				AB06C24524101F2400961991 /* C0773839_MidTerm_MAD3115W2020 */,
 				AB06C24424101F2400961991 /* Products */,
 			);
@@ -65,6 +68,14 @@
 				AB06C25424101F2500961991 /* Info.plist */,
 			);
 			path = C0773839_MidTerm_MAD3115W2020;
+			sourceTree = "<group>";
+		};
+		AB06C25A2410239000961991 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				AB06C25D2410241100961991 /* student.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB06C25324101F2500961991 /* LaunchScreen.storyboard in Resources */,
+				AB06C25E2410241100961991 /* student.png in Resources */,
 				AB06C25024101F2500961991 /* Assets.xcassets in Resources */,
 				AB06C24E24101F2400961991 /* Main.storyboard in Resources */,
 			);
