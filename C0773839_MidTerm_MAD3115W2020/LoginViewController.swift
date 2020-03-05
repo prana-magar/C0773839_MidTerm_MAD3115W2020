@@ -10,12 +10,22 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var switchRememberMe: UISwitch!
     @IBOutlet weak var textViewError: UITextView!
     @IBOutlet weak var textFieldUsername: UITextField!
     @IBOutlet weak var textFieldPassword: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let usrName = UserDefaults.standard.string(forKey: "username"){
+            if let passWord = UserDefaults.standard.string(forKey: "password"){
+                self.textFieldUsername.text = usrName
+                self.textFieldPassword.text = passWord
+            }
+        }
     }
     
     func validateAdmin(username: String, password: String) -> Bool{
@@ -49,6 +59,10 @@ class LoginViewController: UIViewController {
         }
         if self.validateAdmin(username: username, password: password){
             self.textViewError.text  = "Success"
+            if self.switchRememberMe.isOn{
+                UserDefaults.standard.set(username, forKey: "username")
+                UserDefaults.standard.set(password, forKey: "password")
+            }
         }
         else{
             self.textViewError.text  = "Username or Password didn't match"
