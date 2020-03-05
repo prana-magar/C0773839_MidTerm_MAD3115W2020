@@ -63,6 +63,11 @@ class LoginViewController: UIViewController {
                 UserDefaults.standard.set(username, forKey: "username")
                 UserDefaults.standard.set(password, forKey: "password")
             }
+            else{
+                UserDefaults.standard.removeObject(forKey: "username")
+                UserDefaults.standard.removeObject(forKey: "password")
+
+            }
         }
         else{
             self.textViewError.text  = "Username or Password didn't match"
