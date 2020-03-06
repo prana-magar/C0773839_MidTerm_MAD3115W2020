@@ -28,3 +28,19 @@ class CustomerListViewController: UIViewController {
     */
 
 }
+
+//extension CustomerListViewController: UITableViewDelegate, UITableViewDataSource{
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+//
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 0
+//    }
+//
+//
+//}
