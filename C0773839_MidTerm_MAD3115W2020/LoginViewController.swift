@@ -68,6 +68,12 @@ class LoginViewController: UIViewController {
                 UserDefaults.standard.removeObject(forKey: "password")
 
             }
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let customerListView = storyboard.instantiateViewController(identifier: "CustomerListViewController") as CustomerListViewController
+            
+            self.navigationController?.pushViewController(customerListView, animated: true)
+        
         }
         else{
             self.textViewError.text  = "Username or Password didn't match"
