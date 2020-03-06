@@ -16,11 +16,16 @@ class ObjectManager {
     private var customerObjDict :[String: Customer]?
     private init(){
         
-        // Creating default objects
-        
-        // Admin 1
-        var admin1 = Admin(id: "1", userName: "rana_prakash", password: "hello")
+        // Create admin objects
+        let admin1 = Admin(id: "1", userName: "rana_prakash", password: "hello")
         adminsObj.append(admin1)
+        
+        // Create customer objects
+        let cus1 = Customer(id: "1", firstName: "Prakash", lastName: "Rana", gender: Gender.MALE, birthDate: Date(), userName: "rana_prakash", password: "hello", contact: nil)
+        self.addCustomer(customer: cus1)
+        
+        let cus2 = Customer(id: "2", firstName: "Ram", lastName: "Thapa", gender: Gender.MALE, birthDate: Date(), userName: "ramThapa", password: "err", contact: nil)
+        self.addCustomer(customer: cus2)
     }
     
     static func getInstance() -> ObjectManager{
@@ -45,7 +50,6 @@ class ObjectManager {
         }
         return []
     }
-    
-    
+
     
 }

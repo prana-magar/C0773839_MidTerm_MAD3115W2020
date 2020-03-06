@@ -9,10 +9,12 @@
 import UIKit
 
 class CustomerListViewController: UIViewController {
-
+    @IBOutlet weak var customerListTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.customerListTable.delegate = self
+        self.customerListTable.dataSource = self
         // Do any additional setup after loading the view.
     }
     
@@ -29,18 +31,23 @@ class CustomerListViewController: UIViewController {
 
 }
 
-//extension CustomerListViewController: UITableViewDelegate, UITableViewDataSource{
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 0
-//    }
-//
-//
-//}
+extension CustomerListViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        ObjectManager.getInstance().getCustomerList().count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customerCell")
+        
+        let customers = ObjectManager.getInstance().getCustomerList()
+        cell?.textLabel?.text = customers[indexPath.row].name
+        cell?.detailTextLabel!.text = customers[indexPath.row].birthDate?.printFormat()
+        return cell!
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+
+}

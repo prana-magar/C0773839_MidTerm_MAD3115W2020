@@ -21,8 +21,12 @@ class Customer : Person
 //        }
 //
 //    }
+    
+    var name:String  {
+        return self.firstName + self.lastName
+    }
 
-    init(id: String, firstName: String, lastName: String, gender: Gender,birthDate: Date?,age:Int, userName: String, password: String, contact: Contact)
+    override init(id: String, firstName: String, lastName: String, gender: Gender,birthDate: Date?, userName: String, password: String, contact: Contact?)
     {
         super.init(id: id, firstName: firstName, lastName: lastName, gender: gender, birthDate: birthDate, userName: userName, password: password, contact: contact)
     }
