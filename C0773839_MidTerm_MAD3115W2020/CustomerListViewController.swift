@@ -50,4 +50,13 @@ extension CustomerListViewController: UITableViewDelegate, UITableViewDataSource
     }
 
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let customers = ObjectManager.getInstance().getCustomerList()
+        let selectedCustomer = customers[indexPath.row]
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let customerDetailView = storyboard.instantiateViewController(identifier: "CustomerDetailView") as CustomerDetailViewController
+        customerDetailView.customer = selectedCustomer
+        self.navigationController?.pushViewController(customerDetailView, animated: true)
+    }
 }
