@@ -15,10 +15,13 @@ class CustomerListViewController: UIViewController {
         super.viewDidLoad()
         self.customerListTable.delegate = self
         self.customerListTable.dataSource = self
+    
         
-        let nav = self.navigationController?.navigationBar
-        nav?.barStyle = UIBarStyle.black
-        nav?.tintColor = UIColor.yellow
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.customerListTable.reloadData()
         
     }
     

@@ -10,6 +10,8 @@ import UIKit
 
 class AddCustomerViewController: UIViewController {
 
+    @IBOutlet weak var secondNameTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +26,12 @@ class AddCustomerViewController: UIViewController {
         
         // SAve
         
+        // Add checks here
+        let firstName = self.firstNameTextField.text!
+        let lastName = self.secondNameTextField.text!
+        var customer = Customer(id: "5", firstName: firstName, lastName: lastName, gender: Gender.MALE, birthDate: Date(), userName: "asdas", password: "asd", contact: nil)
+        
+        ObjectManager.getInstance().addCustomer(customer: customer)
         self.dismiss(animated: true, completion: nil)
     }
     
