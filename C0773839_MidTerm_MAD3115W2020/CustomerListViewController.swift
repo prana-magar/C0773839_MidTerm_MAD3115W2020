@@ -15,7 +15,11 @@ class CustomerListViewController: UIViewController {
         super.viewDidLoad()
         self.customerListTable.delegate = self
         self.customerListTable.dataSource = self
-        // Do any additional setup after loading the view.
+        
+        let nav = self.navigationController?.navigationBar
+        nav?.barStyle = UIBarStyle.black
+        nav?.tintColor = UIColor.yellow
+        
     }
     
 
