@@ -26,6 +26,7 @@
 		AB06C275241061E600961991 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C274241061E600961991 /* Double+Extensions.swift */; };
 		AB06C2772410620100961991 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C2762410620100961991 /* Date+Extensions.swift */; };
 		AB8C6C23241321D7007FB758 /* AddCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8C6C22241321D7007FB758 /* AddCustomerViewController.swift */; };
+		AB8C6C252413FF8B007FB758 /* TextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8C6C242413FF8B007FB758 /* TextField+Extensions.swift */; };
 		ABFDBF2A2411DA9C0077F025 /* CustomerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDBF292411DA9C0077F025 /* CustomerListViewController.swift */; };
 		ABFDBF2C2411DDD10077F025 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDBF2B2411DDD10077F025 /* Customer.swift */; };
 		ABFDBF302411E8C90077F025 /* CustomerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDBF2F2411E8C90077F025 /* CustomerDetailViewController.swift */; };
@@ -53,6 +54,7 @@
 		AB06C274241061E600961991 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		AB06C2762410620100961991 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		AB8C6C22241321D7007FB758 /* AddCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerViewController.swift; sourceTree = "<group>"; };
+		AB8C6C242413FF8B007FB758 /* TextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extensions.swift"; sourceTree = "<group>"; };
 		ABFDBF292411DA9C0077F025 /* CustomerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewController.swift; sourceTree = "<group>"; };
 		ABFDBF2B2411DDD10077F025 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		ABFDBF2F2411E8C90077F025 /* CustomerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				AB06C272241061D200961991 /* Float+Extensions.swift */,
 				AB06C274241061E600961991 /* Double+Extensions.swift */,
 				AB06C2762410620100961991 /* Date+Extensions.swift */,
+				AB8C6C242413FF8B007FB758 /* TextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				ABFDBF302411E8C90077F025 /* CustomerDetailViewController.swift in Sources */,
 				AB06C271241061BE00961991 /* String+Extensions.swift in Sources */,
 				AB06C24724101F2400961991 /* AppDelegate.swift in Sources */,
+				AB8C6C252413FF8B007FB758 /* TextField+Extensions.swift in Sources */,
 				AB06C26224105D2C00961991 /* PasswordUtil.swift in Sources */,
 				AB8C6C23241321D7007FB758 /* AddCustomerViewController.swift in Sources */,
 				AB06C26424105F2000961991 /* ObjectManager.swift in Sources */,

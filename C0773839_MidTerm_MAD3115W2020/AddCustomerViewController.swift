@@ -8,8 +8,10 @@
 
 import UIKit
 
-class AddCustomerViewController: UIViewController {
-
+class AddCustomerViewController:UIViewController {
+   
+    @IBOutlet weak var genderTextField: UITextField!
+    @IBOutlet weak var dobTextField: UITextField!
     @IBOutlet weak var phoneNumberErrorLabel: UILabel!
     @IBOutlet weak var emailErrorLabel: UILabel!
     @IBOutlet weak var phoneNumberTextField: UITextField!
@@ -18,8 +20,43 @@ class AddCustomerViewController: UIViewController {
     @IBOutlet weak var firstNameTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // Gender Picker View
+        
+        var pickerView = UIPickerView()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
+        self.genderTextField.inputView = pickerView
+        
+        
+        // DOB code
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        
+        dobTextField.inputView = datePicker
+        
+        datePicker.addTarget(self, action: #selector(AddCustomerViewController.dateChanged(datePicker:)), for: .valueChanged)
+        
+        let tapGuesture = UITapGestureRecognizer(target: self, action: #selector(AddCustomerViewController.viewTapped(guestureRecognizer:)))
+        view.addGestureRecognizer(tapGuesture)
+        
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    
+   
+    
+    @objc func viewTapped(guestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker) {
+        self.dobTextField.text = datePicker.date.printFormat()
+        //view.endEditing(true)
     }
     
     @IBAction func cancelBtnDown(_ sender: Any) {
@@ -33,18 +70,20 @@ class AddCustomerViewController: UIViewController {
     }
     
     func defaultConfigLoad() {
-        let myColor : UIColor = UIColor.black
-        self.emailTextField.layer.borderColor =  myColor.cgColor
-        self.emailTextField.layer.borderWidth = 0.0
+        
+        self.emailTextField.animateToColor(selectedColor: UIColor.black)
         self.emailErrorLabel.text = ""
         
         
-        self.phoneNumberTextField.layer.borderColor =  myColor.cgColor
-        self.phoneNumberTextField.layer.borderWidth = 0.0
+        self.phoneNumberTextField.animateToColor(selectedColor: UIColor.black)
         self.phoneNumberErrorLabel.text = ""
+        
+        self.firstNameTextField.animateToColor(selectedColor: UIColor.black)
 
+        
 
     }
+    
     
     @IBAction func saveBtnDown(_ sender: Any) {
         
@@ -52,8 +91,13 @@ class AddCustomerViewController: UIViewController {
         
         // Add checks here
         let firstName = self.firstNameTextField.text!
-        let lastName = self.secondNameTextField.text!
         
+        if firstName.isEmpty {
+            self.firstNameTextField.placeholder = "First Name cant be Empty"
+            self.firstNameTextField.animateToColor(selectedColor: UIColor.red)
+            return
+        }
+        let lastName = self.secondNameTextField.text!
         
         // Create contact and handle errors
         let email = self.emailTextField.text!
@@ -64,37 +108,28 @@ class AddCustomerViewController: UIViewController {
         }
         catch EmailValidationError.isEmpty(let email){
             self.emailErrorLabel.text = "Email can't be Empty."
-            let myColor : UIColor = UIColor.red
-            self.emailTextField.layer.borderColor =  myColor.cgColor
-            self.emailTextField.layer.borderWidth = 1.0
+            self.emailTextField.animateToColor(selectedColor: UIColor.red)
             return
         }
         catch EmailValidationError.isNotValidEmail(let email){
             self.emailErrorLabel.text = "Email is not Valid."
-            let myColor : UIColor = UIColor.red
-            self.emailTextField.layer.borderColor =  myColor.cgColor
-            self.emailTextField.layer.borderWidth = 1.0
+            self.emailTextField.animateToColor(selectedColor: UIColor.red)
+
             return
         }
         catch EmailValidationError.isNotValidLength(let email){
             self.emailErrorLabel.text = "Email is of not valid length"
-            let myColor : UIColor = UIColor.red
-            self.emailTextField.layer.borderColor =  myColor.cgColor
-            self.emailTextField.layer.borderWidth = 1.0
+            self.emailTextField.animateToColor(selectedColor: UIColor.red)
             return
         }
         catch PhoneNumberValidationError.voiletsMaxLength(let number){
             self.phoneNumberErrorLabel.text = "Phone number must be smaller than 17"
-            let myColor : UIColor = UIColor.red
-            self.phoneNumberTextField.layer.borderColor =  myColor.cgColor
-            self.phoneNumberTextField.layer.borderWidth = 1.0
+            self.phoneNumberTextField.animateToColor(selectedColor: UIColor.red)
             return
         }
         catch PhoneNumberValidationError.voiletsMinLength(let number){
             self.phoneNumberErrorLabel.text = "Phone number must be longer than 6"
-           let myColor : UIColor = UIColor.red
-           self.phoneNumberTextField.layer.borderColor =  myColor.cgColor
-           self.phoneNumberTextField.layer.borderWidth = 1.0
+           self.phoneNumberTextField.animateToColor(selectedColor: UIColor.red)
             return
         }
         catch{
@@ -123,4 +158,24 @@ class AddCustomerViewController: UIViewController {
     }
     */
 
+}
+
+
+extension AddCustomerViewController : UIPickerViewDataSource, UIPickerViewDelegate{
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+           return 1
+          }
+          
+      func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+          return Gender.allCases.count
+      }
+       
+       func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+           return "\(Gender.allCases[row])"
+       }
+          
+       func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+           self.genderTextField.text = "\(Gender.allCases[row])"
+       }
 }

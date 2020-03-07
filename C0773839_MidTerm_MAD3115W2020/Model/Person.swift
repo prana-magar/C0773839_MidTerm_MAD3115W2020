@@ -9,7 +9,7 @@
 
 import Foundation
 
-public enum Gender
+public enum Gender: CaseIterable
 {
     case MALE,FEMALE,OTHER
     

@@ -29,14 +29,16 @@ struct Validations {
     
     static func email(email: String) throws {
         
+        if email.isEmpty{
+            throw EmailValidationError.isEmpty(email: email)
+        }
+        
+        
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegex)
         if !emailPred.evaluate(with: email){
             throw EmailValidationError.isNotValidEmail(email: email)
         }
         
-        if email.isEmpty{
-            throw EmailValidationError.isEmpty(email: email)
-        }
         
         if email.count > 254
         {
