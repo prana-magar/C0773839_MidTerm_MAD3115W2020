@@ -63,10 +63,20 @@ class LoginViewController: UIViewController {
             return
         }
         if username.isEmpty{
+            let color = CABasicAnimation(keyPath: "borderColor")
+            var myColor : UIColor = UIColor.white
+            color.fromValue = myColor.cgColor
+            
+            myColor  = UIColor.red
+            color.toValue = myColor.cgColor
+            
+            color.duration = 0.7
+            color.repeatCount = 1
+
             self.usernameErrorLabel.text  = "Username can't be empty"
-            let myColor : UIColor = UIColor.red
             self.textFieldUsername.layer.borderColor =  myColor.cgColor
             self.textFieldUsername.layer.borderWidth = 1.0
+            self.textFieldUsername.layer.add(color, forKey: "borderColor")
             return
         }
         
@@ -76,11 +86,23 @@ class LoginViewController: UIViewController {
         }
         
         if password.isEmpty{
-            self.passwordErrorLabel.text  = "Password can't be empty"
-            let myColor : UIColor = UIColor.red
-            self.textFieldPassword.layer.borderColor =  myColor.cgColor
-            self.textFieldPassword.layer.borderWidth = 1.0
-            return
+            
+            let color = CABasicAnimation(keyPath: "borderColor")
+                       var myColor : UIColor = UIColor.white
+                       color.fromValue = myColor.cgColor
+                       
+                       myColor  = UIColor.red
+                       color.toValue = myColor.cgColor
+                       
+                       color.duration = 0.7
+                       color.repeatCount = 1
+
+           self.passwordErrorLabel.text  = "Username can't be empty"
+           self.textFieldPassword.layer.borderColor =  myColor.cgColor
+           self.textFieldPassword.layer.borderWidth = 1.0
+           self.textFieldPassword.layer.add(color, forKey: "borderColor")
+           return
+            
         }
         if self.validateAdmin(username: username, password: password){
             if self.switchRememberMe.isOn{
