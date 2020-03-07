@@ -10,17 +10,6 @@ import Foundation
 class Customer : Person
 {
     
-//    var totalBill: Double  {
-//        get{
-//            var total: Double = 0
-//            for (_,rent) in self.vehicleRents{
-//                total += Double(rent.totalBill)
-//
-//            }
-//            return total
-//        }
-//
-//    }
     
     var name:String  {
         return self.firstName + self.lastName
