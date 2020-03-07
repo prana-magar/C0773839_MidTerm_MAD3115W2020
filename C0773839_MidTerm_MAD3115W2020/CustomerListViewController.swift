@@ -19,6 +19,11 @@ class CustomerListViewController: UIViewController {
         
     }
     
+    @IBAction func logoutBtnDown(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.customerListTable.reloadData()

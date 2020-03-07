@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="C0773839_MidTerm_MAD3115W2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginCustomerView" id="BYZ-38-t0r" customClass="LoginViewController" customModule="C0773839_MidTerm_MAD3115W2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,6 +124,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="YKZ-yf-kkQ">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="clG-Uu-YHV">
+                            <connections>
+                                <action selector="logoutBtnDown:" destination="BI7-ix-jbJ" id="wtM-ek-EiU"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="m2r-R4-uTn">
                             <connections>
                                 <action selector="addBtnDown:" destination="BI7-ix-jbJ" id="aan-WN-8L6"/>
