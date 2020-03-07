@@ -10,8 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var passwordErrorLabel: UILabel!
+    @IBOutlet weak var usernameErrorLabel: UILabel!
     @IBOutlet weak var switchRememberMe: UISwitch!
-    @IBOutlet weak var textViewError: UITextView!
     @IBOutlet weak var textFieldUsername: UITextField!
     @IBOutlet weak var textFieldPassword: UITextField!
     override func viewDidLoad() {
@@ -28,7 +29,19 @@ class LoginViewController: UIViewController {
                 self.textFieldPassword.text = passWord
             }
         }
-        self.textViewError.text  = ""
+        self.usernameErrorLabel.text  = ""
+        self.passwordErrorLabel.text  = ""
+        self.defaultConf()
+    }
+    
+    func defaultConf(){
+        let myColor : UIColor = UIColor.black
+        self.textFieldUsername.layer.borderColor =  myColor.cgColor
+        self.textFieldUsername.layer.borderWidth = 0.0
+        self.textFieldPassword.layer.borderColor =  myColor.cgColor
+        self.textFieldPassword.layer.borderWidth = 0.0
+        self.usernameErrorLabel.text  = ""
+        self.passwordErrorLabel.text  = ""
     }
     
     func validateAdmin(username: String, password: String) -> Bool{
@@ -41,23 +54,30 @@ class LoginViewController: UIViewController {
         return false
     }
     @IBAction func btnLogin(_ sender: Any) {
+        self.defaultConf()
         print(self.textFieldUsername.text)
         guard let username = self.textFieldUsername.text  else{
-            self.textViewError.text  = "Username can't be empty"
+            self.usernameErrorLabel.text  = "Username can't be empty"
             return
         }
         if username.isEmpty{
-            self.textViewError.text  = "Username can't be empty"
+            self.usernameErrorLabel.text  = "Username can't be empty"
+            let myColor : UIColor = UIColor.red
+            self.textFieldUsername.layer.borderColor =  myColor.cgColor
+            self.textFieldUsername.layer.borderWidth = 1.0
             return
         }
         
         guard let password = self.textFieldPassword.text  else{
-            self.textViewError.text  = "Password can't be empty"
+            self.passwordErrorLabel.text  = "Password can't be empty"
             return
         }
         
         if password.isEmpty{
-            self.textViewError.text  = "Password can't be empty"
+            self.passwordErrorLabel.text  = "Password can't be empty"
+            let myColor : UIColor = UIColor.red
+            self.textFieldPassword.layer.borderColor =  myColor.cgColor
+            self.textFieldPassword.layer.borderWidth = 1.0
             return
         }
         if self.validateAdmin(username: username, password: password){
@@ -78,7 +98,12 @@ class LoginViewController: UIViewController {
         
         }
         else{
-            self.textViewError.text  = "Username or Password didn't match"
+            //self.textViewError.text  = "Username or Password didn't match"
+            let alertController = UIAlertController(title: "Error", message:
+                "Username or Password didn't match", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+            self.present(alertController, animated: true, completion: nil)
         }
         
     }

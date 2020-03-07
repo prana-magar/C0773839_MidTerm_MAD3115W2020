@@ -27,9 +27,6 @@ public class Contact
         self.emailId = emailId
         self.mobileNumber = mobileNumber
     }
-    
-   
-
         
 }
 
