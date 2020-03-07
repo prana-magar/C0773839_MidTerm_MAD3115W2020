@@ -15,11 +15,11 @@ public class Contact
 {
     private var mobileNumber: String
     private var emailId: String
-    private var address: Address
+    private var address: Address?
 
 
     
-    internal init(mobileNumber: String, emailId: String, address: Address) throws
+    internal init(mobileNumber: String, emailId: String, address: Address?) throws
     {
         try Validations.email(email: emailId)
         try Validations.mobileNumber(number: mobileNumber)
