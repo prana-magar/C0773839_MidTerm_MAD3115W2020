@@ -23,14 +23,16 @@ class LoginViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.textFieldUsername.text = ""
+        self.textFieldPassword.text = ""
         if let usrName = UserDefaults.standard.string(forKey: "username"){
             if let passWord = UserDefaults.standard.string(forKey: "password"){
                 self.textFieldUsername.text = usrName
                 self.textFieldPassword.text = passWord
             }
         }
-        self.usernameErrorLabel.text  = ""
-        self.passwordErrorLabel.text  = ""
+        
         self.defaultConf()
     }
     
