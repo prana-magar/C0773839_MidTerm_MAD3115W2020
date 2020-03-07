@@ -19,7 +19,7 @@ class AddCustomerViewController: UIViewController {
     }
     
     @IBAction func cancelBtnDown(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
         
     }
     @IBAction func saveBtnDown(_ sender: Any) {
@@ -29,10 +29,10 @@ class AddCustomerViewController: UIViewController {
         // Add checks here
         let firstName = self.firstNameTextField.text!
         let lastName = self.secondNameTextField.text!
-        var customer = Customer(id: "5", firstName: firstName, lastName: lastName, gender: Gender.MALE, birthDate: Date(), userName: "asdas", password: "asd", contact: nil)
+        var customer = Customer(id: ObjectManager.getInstance().getRandomID(), firstName: firstName, lastName: lastName, gender: Gender.MALE, birthDate: Date(), userName: "asdas", password: "asd", contact: nil)
         
         ObjectManager.getInstance().addCustomer(customer: customer)
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     /*

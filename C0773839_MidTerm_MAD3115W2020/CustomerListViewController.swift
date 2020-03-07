@@ -26,6 +26,12 @@ class CustomerListViewController: UIViewController {
     }
     
 
+    @IBAction func addBtnDown(_ sender: Any) {
+         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let addCustomerView = storyBoard.instantiateViewController(identifier: "AddCustomerView")
+        self.navigationController?.pushViewController(addCustomerView, animated: true)
+        
+    }
     /*
     // MARK: - Navigation
 

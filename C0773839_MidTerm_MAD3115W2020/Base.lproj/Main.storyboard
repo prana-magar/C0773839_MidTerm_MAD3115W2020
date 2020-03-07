@@ -126,7 +126,7 @@
                     <navigationItem key="navigationItem" title="Title" id="YKZ-yf-kkQ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="m2r-R4-uTn">
                             <connections>
-                                <segue destination="zht-77-21W" kind="presentation" id="8ES-Rb-moU"/>
+                                <action selector="addBtnDown:" destination="BI7-ix-jbJ" id="aan-WN-8L6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -142,9 +142,9 @@
         <!--Add Customer View Controller-->
         <scene sceneID="pfx-mM-Nw9">
             <objects>
-                <viewController id="GZg-HL-Ijs" customClass="AddCustomerViewController" customModule="C0773839_MidTerm_MAD3115W2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCustomerView" id="GZg-HL-Ijs" customClass="AddCustomerViewController" customModule="C0773839_MidTerm_MAD3115W2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8IJ-GG-qxv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B61-bz-nYE">
@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IjT-2Q-z57" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4482.608695652174" y="-52.232142857142854"/>
+            <point key="canvasLocation" x="5392.753623188406" y="-52.232142857142854"/>
         </scene>
         <!--Customer Detail View Controller-->
         <scene sceneID="Ec0-6u-bZm">
@@ -262,22 +262,23 @@
             <point key="canvasLocation" x="1779.7101449275365" y="72.991071428571431"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="tq2-eU-syl">
+        <scene sceneID="5lK-RT-HlV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zht-77-21W" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w72-um-EVi" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VsE-aa-tGI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                    <navigationItem key="navigationItem" id="YAw-It-BZQ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gGy-5L-EWH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="GZg-HL-Ijs" kind="relationship" relationship="rootViewController" id="O80-fE-Btf"/>
+                        <segue destination="GZg-HL-Ijs" kind="relationship" relationship="rootViewController" id="hVe-Ml-BA5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qlR-qp-w5s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yuw-if-TAJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3572.4637681159425" y="-52.232142857142854"/>
+            <point key="canvasLocation" x="4482.608695652174" y="-52.232142857142854"/>
         </scene>
     </scenes>
 </document>
