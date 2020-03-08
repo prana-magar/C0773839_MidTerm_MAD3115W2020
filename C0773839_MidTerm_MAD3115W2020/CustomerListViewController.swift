@@ -8,7 +8,15 @@
 
 import UIKit
 
+class CustomTableCell: UITableViewCell{
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+}
+
 class CustomerListViewController: UIViewController {
+   
     @IBOutlet weak var customerListTable: UITableView!
     
     override func viewDidLoad() {
@@ -50,17 +58,33 @@ class CustomerListViewController: UIViewController {
 }
 
 extension CustomerListViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         ObjectManager.getInstance().getCustomerList().count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customerCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customerCell") as! CustomTableCell
         
         let customers = ObjectManager.getInstance().getCustomerList()
-        cell?.textLabel?.text = customers[indexPath.row].name
-        cell?.detailTextLabel!.text = customers[indexPath.row].birthDate?.printFormat()
-        return cell!
+//        cell?.textLabel?.text = customers[indexPath.row].name
+        
+        let imageName = customers[indexPath.row].profileImageName ?? "hh.jpg"
+        cell.profileImageView.image = UIImage(named: imageName)
+        
+        cell.profileImageView.frame.size.height = 50
+        cell.profileImageView.frame.size.width = 50
+        cell.profileImageView.layer.cornerRadius = cell.profileImageView.frame.size.width / 2
+        cell.profileImageView.layer.borderWidth = 2.0
+        
+        
+        cell.nameLabel.text = customers[indexPath.row].name
+        return cell
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
