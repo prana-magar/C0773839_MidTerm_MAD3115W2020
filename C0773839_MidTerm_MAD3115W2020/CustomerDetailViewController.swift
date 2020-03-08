@@ -16,8 +16,8 @@ class CustomerDetailViewController: UIViewController {
     
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var dobLabel: UILabel!
 
+    @IBOutlet weak var dobLabel: UILabel!
     
     var customer: Customer?
     override func viewDidLoad() {
@@ -27,6 +27,7 @@ class CustomerDetailViewController: UIViewController {
             self.nameLabel.text = customer.name
             self.emailLabel.text = customer.contact?.email
             self.phoneNumberLabel.text = customer.contact?.number
+            self.dobLabel.text = customer.birthDate?.printFormat()
 
         }
         
