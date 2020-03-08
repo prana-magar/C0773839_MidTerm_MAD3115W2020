@@ -143,7 +143,7 @@ class AddCustomerViewController:UIViewController {
         }
         
         
-        var customer = Customer(id: ObjectManager.getInstance().getRandomID(), firstName: firstName, lastName: lastName, gender: Gender.MALE, birthDate: Date(), userName: "asdas", password: "asd", contact: contact)
+        var customer = Customer(id: ObjectManager.getInstance().getRandomID(), firstName: firstName, lastName: lastName, gender: Gender.MALE, birthDate: Date(), userName: "asdas", password: "asd", contact: contact, profileImageName: nil)
         
         ObjectManager.getInstance().addCustomer(customer: customer)
         self.navigationController?.popViewController(animated: true)

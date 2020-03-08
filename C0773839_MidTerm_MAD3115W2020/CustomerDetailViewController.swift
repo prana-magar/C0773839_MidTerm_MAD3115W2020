@@ -28,10 +28,13 @@ class CustomerDetailViewController: UIViewController {
             self.emailLabel.text = customer.contact?.email
             self.phoneNumberLabel.text = customer.contact?.number
             self.dobLabel.text = customer.birthDate?.printFormat()
+            let profileImageNameTxt = customer.profileImageName ?? "headshot.jpg"
+            self.profileImageView.image = UIImage(named:profileImageNameTxt )
 
         }
         
-//        self.profileImageView.image = UIImage(named: "hh")
+        
+        
         self.profileImageView.frame.size.height = 150
         self.profileImageView.frame.size.width = 150
         self.profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2

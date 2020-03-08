@@ -15,7 +15,7 @@ class CustomerListViewController: UIViewController {
         super.viewDidLoad()
         self.customerListTable.delegate = self
         self.customerListTable.dataSource = self
-    
+        self.navigationItem.title = "Customers"
         
     }
     

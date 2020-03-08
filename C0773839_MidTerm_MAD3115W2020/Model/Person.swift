@@ -45,8 +45,9 @@ class Person
      var password: String
      var contact: Contact?
      var salt: String
+    var profileImageName: String?
     
-    init(id: String, firstName: String, lastName: String, gender: Gender,birthDate: Date?, userName: String, password: String, contact: Contact?) {
+    init(id: String, firstName: String, lastName: String, gender: Gender,birthDate: Date?, userName: String, password: String, contact: Contact?, profileImageName: String?) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
@@ -56,6 +57,7 @@ class Person
         self.contact = contact
         self.salt = PasswordUtil.getSalt()
         self.password = PasswordUtil.getHashedPassword(plainPassword: password, salt: self.salt)
+        self.profileImageName = profileImageName
     }
     
 

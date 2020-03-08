@@ -29,7 +29,7 @@ class ObjectManager {
         catch{
             print("Couldnt create contact")
         }
-        let cus1 = Customer(id: "1", firstName: "John", lastName: "Cena", gender: Gender.MALE, birthDate: Date(), userName: "johncen", password: "hello", contact: contact1)
+        let cus1 = Customer(id: "1", firstName: "John", lastName: "Cena", gender: Gender.MALE, birthDate: Date(), userName: "johncen", password: "hello", contact: contact1, profileImageName: "hh.jpg")
         self.addCustomer(customer: cus1)
         
         var contact2:Contact?
@@ -39,7 +39,7 @@ class ObjectManager {
         catch {
             print("Couldnt create contact")
         }
-        let cus2 = Customer(id: "2", firstName: "Ram", lastName: "Thapa", gender: Gender.MALE, birthDate: Date(), userName: "ramThapa", password: "err", contact: contact2)
+        let cus2 = Customer(id: "2", firstName: "Ram", lastName: "Thapa", gender: Gender.MALE, birthDate: Date(), userName: "ramThapa", password: "err", contact: contact2, profileImageName: "headshot.jpg")
         self.addCustomer(customer: cus2)
     }
     
