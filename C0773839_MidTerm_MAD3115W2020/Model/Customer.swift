@@ -12,7 +12,7 @@ class Customer : Person
     
     
     var name:String  {
-        return self.firstName + self.lastName
+        return self.firstName + " " + self.lastName
     }
 
     override init(id: String, firstName: String, lastName: String, gender: Gender,birthDate: Date?, userName: String, password: String, contact: Contact?)
