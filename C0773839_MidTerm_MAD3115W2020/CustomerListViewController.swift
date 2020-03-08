@@ -83,9 +83,13 @@ extension CustomerListViewController: UITableViewDelegate, UITableViewDataSource
         cell.profileImageView.layer.borderWidth = 2.0
         
         
+        cell.layer.borderWidth = 1.0
+        cell.layer.borderColor = CGColor(srgbRed: 0, green: 0.749, blue: 0.7882, alpha: 1.0)
         cell.nameLabel.text = customers[indexPath.row].name
         return cell
     }
+    
+    
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
