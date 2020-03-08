@@ -103,8 +103,9 @@ class AddCustomerViewController:UIViewController {
         let email = self.emailTextField.text!
         let phoneNumber = self.phoneNumberTextField.text!
         
+        var contact :Contact? = nil
         do{
-            var contact = try Contact(mobileNumber: phoneNumber , emailId: email, address: nil)
+            contact = try Contact(mobileNumber: phoneNumber , emailId: email, address: nil)
         }
         catch EmailValidationError.isEmpty(let email){
             self.emailErrorLabel.text = "Email can't be Empty."
@@ -142,7 +143,7 @@ class AddCustomerViewController:UIViewController {
         }
         
         
-        var customer = Customer(id: ObjectManager.getInstance().getRandomID(), firstName: firstName, lastName: lastName, gender: Gender.MALE, birthDate: Date(), userName: "asdas", password: "asd", contact: nil)
+        var customer = Customer(id: ObjectManager.getInstance().getRandomID(), firstName: firstName, lastName: lastName, gender: Gender.MALE, birthDate: Date(), userName: "asdas", password: "asd", contact: contact)
         
         ObjectManager.getInstance().addCustomer(customer: customer)
         self.navigationController?.popViewController(animated: true)

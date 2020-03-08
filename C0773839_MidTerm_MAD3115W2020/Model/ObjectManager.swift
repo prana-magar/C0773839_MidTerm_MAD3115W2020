@@ -21,10 +21,25 @@ class ObjectManager {
         adminsObj.append(admin1)
         
         // Create customer objects
-        let cus1 = Customer(id: "1", firstName: "Prakash", lastName: "Rana", gender: Gender.MALE, birthDate: Date(), userName: "rana_prakash", password: "hello", contact: nil)
+        var contact1 : Contact?
+        
+        do{
+            contact1 = try Contact(mobileNumber: "(647)2339102", emailId: "johncena@invisible.com", address: nil)
+        }
+        catch{
+            print("Couldnt create contact")
+        }
+        let cus1 = Customer(id: "1", firstName: "John", lastName: "Cena", gender: Gender.MALE, birthDate: Date(), userName: "johncen", password: "hello", contact: contact1)
         self.addCustomer(customer: cus1)
         
-        let cus2 = Customer(id: "2", firstName: "Ram", lastName: "Thapa", gender: Gender.MALE, birthDate: Date(), userName: "ramThapa", password: "err", contact: nil)
+        var contact2:Contact?
+        do{
+            contact2 = try Contact(mobileNumber: "(647)23224444", emailId: "ram@gmail.com", address: nil)
+        }
+        catch {
+            print("Couldnt create contact")
+        }
+        let cus2 = Customer(id: "2", firstName: "Ram", lastName: "Thapa", gender: Gender.MALE, birthDate: Date(), userName: "ramThapa", password: "err", contact: contact2)
         self.addCustomer(customer: cus2)
     }
     

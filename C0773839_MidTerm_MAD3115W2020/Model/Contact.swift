@@ -15,18 +15,26 @@ public class Contact
 {
     private var mobileNumber: String
     private var emailId: String
-    private var address: Address?
+    private var addressObj: Address?
 
-
+    var email:  String {
+        return emailId
+    }
+    var number: String{
+        return mobileNumber
+    }
+    
     
     internal init(mobileNumber: String, emailId: String, address: Address?) throws
     {
         try Validations.email(email: emailId)
         try Validations.mobileNumber(number: mobileNumber)
-        self.address = address
+        self.addressObj = address
         self.emailId = emailId
         self.mobileNumber = mobileNumber
     }
+    
+    
         
 }
 

@@ -27,6 +27,10 @@
 		AB06C2772410620100961991 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C2762410620100961991 /* Date+Extensions.swift */; };
 		AB8C6C23241321D7007FB758 /* AddCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8C6C22241321D7007FB758 /* AddCustomerViewController.swift */; };
 		AB8C6C252413FF8B007FB758 /* TextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8C6C242413FF8B007FB758 /* TextField+Extensions.swift */; };
+		AB8C6C4B24144822007FB758 /* headshot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB8C6C4A24144822007FB758 /* headshot.jpg */; };
+		AB8C6C4D2414496C007FB758 /* hh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB8C6C4C2414496C007FB758 /* hh.jpg */; };
+		AB8C6C4F241463B9007FB758 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8C6C4E241463B9007FB758 /* mail.png */; };
+		AB8C6C51241465DE007FB758 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8C6C50241465DE007FB758 /* phone.png */; };
 		ABFDBF2A2411DA9C0077F025 /* CustomerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDBF292411DA9C0077F025 /* CustomerListViewController.swift */; };
 		ABFDBF2C2411DDD10077F025 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDBF2B2411DDD10077F025 /* Customer.swift */; };
 		ABFDBF302411E8C90077F025 /* CustomerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDBF2F2411E8C90077F025 /* CustomerDetailViewController.swift */; };
@@ -55,6 +59,10 @@
 		AB06C2762410620100961991 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		AB8C6C22241321D7007FB758 /* AddCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerViewController.swift; sourceTree = "<group>"; };
 		AB8C6C242413FF8B007FB758 /* TextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extensions.swift"; sourceTree = "<group>"; };
+		AB8C6C4A24144822007FB758 /* headshot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headshot.jpg; sourceTree = "<group>"; };
+		AB8C6C4C2414496C007FB758 /* hh.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hh.jpg; sourceTree = "<group>"; };
+		AB8C6C4E241463B9007FB758 /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
+		AB8C6C50241465DE007FB758 /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
 		ABFDBF292411DA9C0077F025 /* CustomerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewController.swift; sourceTree = "<group>"; };
 		ABFDBF2B2411DDD10077F025 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		ABFDBF2F2411E8C90077F025 /* CustomerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +119,10 @@
 		AB06C25A2410239000961991 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				AB8C6C50241465DE007FB758 /* phone.png */,
+				AB8C6C4E241463B9007FB758 /* mail.png */,
+				AB8C6C4C2414496C007FB758 /* hh.jpg */,
+				AB8C6C4A24144822007FB758 /* headshot.jpg */,
 				AB06C25D2410241100961991 /* student.png */,
 			);
 			path = images;
@@ -208,9 +220,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB8C6C4F241463B9007FB758 /* mail.png in Resources */,
 				AB06C25324101F2500961991 /* LaunchScreen.storyboard in Resources */,
 				AB06C25E2410241100961991 /* student.png in Resources */,
+				AB8C6C4B24144822007FB758 /* headshot.jpg in Resources */,
+				AB8C6C4D2414496C007FB758 /* hh.jpg in Resources */,
 				AB06C25024101F2500961991 /* Assets.xcassets in Resources */,
+				AB8C6C51241465DE007FB758 /* phone.png in Resources */,
 				AB06C24E24101F2400961991 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
