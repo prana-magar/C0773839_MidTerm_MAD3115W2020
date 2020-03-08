@@ -22,3 +22,15 @@ class Customer : Person
     
 
 }
+
+extension Customer{
+    
+    var placeholderImageName: String{
+        switch self.gender {
+        case Gender.MALE:
+            return "placeholderHeadshotMale.jpg"
+        default:
+            return "placeholderHeadshotFemale.jpg"
+        }
+    }
+}

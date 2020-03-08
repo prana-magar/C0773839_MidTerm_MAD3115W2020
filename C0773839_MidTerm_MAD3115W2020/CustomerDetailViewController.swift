@@ -28,7 +28,7 @@ class CustomerDetailViewController: UIViewController {
             self.emailLabel.text = customer.contact?.email
             self.phoneNumberLabel.text = customer.contact?.number
             self.dobLabel.text = customer.birthDate?.printFormat()
-            let profileImageNameTxt = customer.profileImageName ?? "headshot.jpg"
+            let profileImageNameTxt = customer.profileImageName ?? customer.placeholderImageName
             self.profileImageView.image = UIImage(named:profileImageNameTxt )
 
         }

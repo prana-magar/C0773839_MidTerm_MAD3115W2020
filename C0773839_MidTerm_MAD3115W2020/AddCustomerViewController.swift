@@ -55,7 +55,7 @@ class AddCustomerViewController:UIViewController {
     }
     
     @objc func dateChanged(datePicker: UIDatePicker) {
-        self.dobTextField.text = datePicker.date.printFormat()
+        self.dobTextField.text = datePicker.date.printFormat(format: "MMMM/dd/yyyy")
         //view.endEditing(true)
     }
     
@@ -143,7 +143,13 @@ class AddCustomerViewController:UIViewController {
         }
         
         
-        var customer = Customer(id: ObjectManager.getInstance().getRandomID(), firstName: firstName, lastName: lastName, gender: Gender.MALE, birthDate: Date(), userName: "asdas", password: "asd", contact: contact, profileImageName: nil)
+        let gender: Gender = Gender.getGenderType(genderString:self.genderTextField.text ?? "Male")
+        
+        let birthDateString = self.dobTextField.text ?? ""
+        let birthDate = Date.ofStr(dateString: birthDateString) ?? Date()
+        
+        
+        var customer = Customer(id: ObjectManager.getInstance().getRandomID(), firstName: firstName, lastName: lastName, gender: gender, birthDate: birthDate, userName: "asdas", password: "asd", contact: contact, profileImageName: nil)
         
         ObjectManager.getInstance().addCustomer(customer: customer)
         self.navigationController?.popViewController(animated: true)

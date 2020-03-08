@@ -26,4 +26,14 @@ extension Date{
            let age = calcAge.year
            return age!
     }
+    
+    static func ofStr(dateString: String, formatString: String = "MMMM/dd/yyyy") -> Date?{
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_CA")
+        formatter.dateFormat = formatString
+        if let date = formatter.date(from: dateString) {
+            return date
+        }
+        return nil
+    }
 }
