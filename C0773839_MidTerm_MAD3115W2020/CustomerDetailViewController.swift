@@ -40,39 +40,10 @@ class CustomerDetailViewController: UIViewController {
         self.profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
         self.profileImageView.layer.borderWidth = 2.0
         
-        
-//        layoutSetup()
-        
-//        self.profilePicImageView.layer.masksToBounds = true
-        
-        
-        
-        // Do any additional setup after loading the view.
+
     }
     
-    func layoutSetup() {
     
-        
-    
-        
-        
-//        let image: UIImage = UIImage(named: "hh.jpg")!
-//        let profilePicImageViewObj = UIImageView(image: image )
-//        self.profilePicImageView = profilePicImageViewObj
-//        view.addSubview(profilePicImageView)
-//        profilePicImageView.translatesAutoresizingMaskIntoConstraints = false
-//        profilePicImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//
-//        profilePicImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
-//
-//        profilePicImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-//        profilePicImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
-//
-//        self.profilePicImageView.frame.size.height = 150
-//        self.profilePicImageView.frame.size.width = 150
-//        profilePicImageView.layer.cornerRadius = profilePicImageView.frame.size.width / 2
-        
-    }
     
     
 
