@@ -23,11 +23,20 @@ class AddBillViewController: UIViewController {
         pickerView.dataSource = self
         
         self.labelBillType.inputView = pickerView
+        
+        let tapGuesture = UITapGestureRecognizer(target: self, action: #selector(AddBillViewController.viewTapped(guestureRecognizer:)))
+        view.addGestureRecognizer(tapGuesture)
 
         // Do any additional setup after loading the view.
     }
     
+    @objc func viewTapped(guestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
 }
+
+
 
 extension AddBillViewController: UIPickerViewDelegate,  UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
