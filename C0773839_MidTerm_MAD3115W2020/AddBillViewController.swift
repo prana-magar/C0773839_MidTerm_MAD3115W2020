@@ -48,8 +48,56 @@ class AddBillViewController: UIViewController {
            self.labelBillDate.text = datePicker.date.printFormat(format: "MMMM/dd/yyyy")
            //view.endEditing(true)
        }
+    
+    func defaultConfigLoad() {
+           
+           self.labelBillType.animateToColor(selectedColor: UIColor.black)
+           
+           
+           self.labelBillDate.animateToColor(selectedColor: UIColor.black)
+           
+           self.labelBillAmount.animateToColor(selectedColor: UIColor.black)
+
+           
+
+       }
+       
        
     
+    @IBAction func btnSaveDown(_ sender: Any) {
+        
+        self.defaultConfigLoad()
+               
+               // Add checks here
+               let billType = self.labelBillType.text!
+               
+               if billType.isEmpty {
+                   
+                   self.labelBillType.animateToColor(selectedColor: UIColor.red)
+                   return
+               }
+        
+            let billDateString = self.labelBillDate.text ?? ""
+            if billDateString.isEmpty {
+                
+                self.labelBillDate.animateToColor(selectedColor: UIColor.red)
+                return
+            }
+            let billDate = Date.ofStr(dateString: billDateString) ?? Date()
+                
+            let billAmount = self.labelBillAmount.text ?? ""
+            if billAmount.isEmpty {
+                
+                self.labelBillAmount.animateToColor(selectedColor: UIColor.red)
+                return
+            }
+        
+        
+            // object creation
+           
+            
+        
+    }
 }
 
 

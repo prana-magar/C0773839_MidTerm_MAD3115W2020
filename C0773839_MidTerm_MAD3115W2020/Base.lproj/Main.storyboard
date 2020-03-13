@@ -546,7 +546,11 @@
                         <viewLayoutGuide key="safeArea" id="S4J-XR-RPI"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Bill" id="SNb-NB-ZhW">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rbc-Vy-W5h"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rbc-Vy-W5h">
+                            <connections>
+                                <action selector="btnSaveDown:" destination="my5-zk-j58" id="wHF-pb-2hu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="labelBillAmount" destination="eYR-v7-USq" id="t3v-2G-0ej"/>
