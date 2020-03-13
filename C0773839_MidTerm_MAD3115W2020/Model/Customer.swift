@@ -38,4 +38,16 @@ extension Customer{
     func addBill(bill: Bill) {
         self.billDict.updateValue(bill, forKey: bill.id)
     }
+    
+    func getBills() -> [Bill]{
+        return Array(self.billDict.values)
+    }
+    
+    func getTotalBill() -> Float {
+        var total: Float = 0.0
+        for (_,bill) in self.billDict{
+            total += bill.total
+        }
+        return total
+    }
 }

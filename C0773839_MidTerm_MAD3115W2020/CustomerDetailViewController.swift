@@ -12,13 +12,16 @@ class CustomBillTableCell: UITableViewCell{
     
     @IBOutlet weak var labelBillId: UILabel!
     
+    @IBOutlet weak var labelBillAmount: UILabel!
+    @IBOutlet weak var labelBillDate: UILabel!
 }
 
 
 class CustomerDetailViewController: UIViewController {
     @IBOutlet weak var tblBills: UITableView!
     
-   
+    @IBOutlet weak var labelBillTotal: UILabel!
+    
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
     
@@ -50,7 +53,8 @@ class CustomerDetailViewController: UIViewController {
         self.profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
         self.profileImageView.layer.borderWidth = 2.0
         
-
+        self.labelBillTotal.text =  self.customer?.getTotalBill().priceFormat()
+        
     }
     
     
@@ -72,14 +76,21 @@ class CustomerDetailViewController: UIViewController {
 
 extension CustomerDetailViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return (self.customer?.getBills().count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomBillTableCell") as! CustomBillTableCell
-        cell.labelBillId.text = "Test"
+        cell.labelBillId.text = self.customer?.getBills()[indexPath.row].id
+        cell.labelBillDate.text = self.customer?.getBills()[indexPath.row].date.printFormat()
+        cell.labelBillAmount.text = self.customer?.getBills()[indexPath.row].total.priceFormat()
+
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
+        
+    }
     
 }

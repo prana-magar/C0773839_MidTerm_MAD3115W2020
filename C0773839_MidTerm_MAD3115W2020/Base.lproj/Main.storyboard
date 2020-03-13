@@ -395,17 +395,49 @@
                                 <rect key="frame" x="20" y="492" width="374" height="370"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomBillTableCell" id="Glz-rR-qPN" customClass="CustomBillTableCell" customModule="C0773839_MidTerm_MAD3115W2020" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomBillTableCell" rowHeight="178" id="Glz-rR-qPN" customClass="CustomBillTableCell" customModule="C0773839_MidTerm_MAD3115W2020" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="178"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Glz-rR-qPN" id="Iqc-GT-uVR">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="178"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W3-YC-pzW">
-                                                    <rect key="frame" x="40" y="19" width="294" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W3-YC-pzW">
+                                                    <rect key="frame" x="40" y="13" width="294" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="rZO-al-6UE"/>
+                                                        <constraint firstAttribute="height" constant="20" id="rZO-al-6UE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="qwt-e8-thN">
+                                                    <rect key="frame" x="20" y="38" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="D20-uG-bOI"/>
+                                                        <constraint firstAttribute="height" constant="30" id="ZJt-0U-Heh"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dD4-KH-H0C">
+                                                    <rect key="frame" x="60" y="38" width="274" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="WYP-Iy-NR6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="X26-Ba-K1Y">
+                                                    <rect key="frame" x="20" y="73" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="7Rr-k2-OMd"/>
+                                                        <constraint firstAttribute="width" constant="30" id="BSb-YC-XL2"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUn-pS-g2I">
+                                                    <rect key="frame" x="60" y="73" width="274" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="SsG-6q-z8u"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -413,12 +445,24 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="XUn-pS-g2I" firstAttribute="leading" secondItem="X26-Ba-K1Y" secondAttribute="trailing" constant="10" id="3DV-EB-uQJ"/>
+                                                <constraint firstItem="1W3-YC-pzW" firstAttribute="top" secondItem="Iqc-GT-uVR" secondAttribute="topMargin" constant="2" id="429-20-yI2"/>
+                                                <constraint firstItem="XUn-pS-g2I" firstAttribute="top" secondItem="dD4-KH-H0C" secondAttribute="bottom" constant="5" id="Abz-fM-Pf2"/>
+                                                <constraint firstItem="dD4-KH-H0C" firstAttribute="top" secondItem="1W3-YC-pzW" secondAttribute="bottom" constant="5" id="BnD-dx-CSc"/>
+                                                <constraint firstItem="qwt-e8-thN" firstAttribute="top" secondItem="1W3-YC-pzW" secondAttribute="bottom" constant="5" id="Dco-gd-qdm"/>
                                                 <constraint firstItem="1W3-YC-pzW" firstAttribute="leading" secondItem="Iqc-GT-uVR" secondAttribute="leadingMargin" constant="20" id="GZi-g9-Y2C"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="XUn-pS-g2I" secondAttribute="trailing" constant="20" id="K2B-50-Bom"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="1W3-YC-pzW" secondAttribute="trailing" constant="20" id="Lcb-Oa-S6O"/>
-                                                <constraint firstItem="1W3-YC-pzW" firstAttribute="top" secondItem="Iqc-GT-uVR" secondAttribute="topMargin" constant="8" id="uEO-TX-kQb"/>
+                                                <constraint firstItem="X26-Ba-K1Y" firstAttribute="leading" secondItem="Iqc-GT-uVR" secondAttribute="leading" constant="20" id="Unr-nd-OAt"/>
+                                                <constraint firstItem="X26-Ba-K1Y" firstAttribute="top" secondItem="qwt-e8-thN" secondAttribute="bottom" constant="5" id="YFb-IY-w9C"/>
+                                                <constraint firstItem="qwt-e8-thN" firstAttribute="leading" secondItem="Iqc-GT-uVR" secondAttribute="leading" constant="20" id="i6C-x6-0EN"/>
+                                                <constraint firstItem="dD4-KH-H0C" firstAttribute="leading" secondItem="qwt-e8-thN" secondAttribute="trailing" constant="10" id="z5E-Ic-XFS"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="dD4-KH-H0C" secondAttribute="trailing" constant="20" id="zLe-7a-QF6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="labelBillAmount" destination="XUn-pS-g2I" id="4Ud-DP-zp5"/>
+                                            <outlet property="labelBillDate" destination="dD4-KH-H0C" id="BtD-MK-eIL"/>
                                             <outlet property="labelBillId" destination="1W3-YC-pzW" id="8bc-sK-BXY"/>
                                         </connections>
                                     </tableViewCell>
@@ -455,6 +499,7 @@
                     <connections>
                         <outlet property="dobLabel" destination="kzv-MA-5Nz" id="z9J-Ox-vzu"/>
                         <outlet property="emailLabel" destination="3Hv-bO-0z8" id="hOL-cE-tDn"/>
+                        <outlet property="labelBillTotal" destination="K8e-ar-9h7" id="JFH-V2-wik"/>
                         <outlet property="nameLabel" destination="9Kj-QW-kzf" id="e1b-Jm-zib"/>
                         <outlet property="phoneNumberLabel" destination="Rs9-lE-mnA" id="Rgk-WE-UaA"/>
                         <outlet property="profileImageView" destination="ciN-kK-TSI" id="oTE-fL-Wz1"/>
@@ -522,8 +567,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendar" width="512" height="512"/>
         <image name="hh.jpg" width="540" height="540"/>
         <image name="mail.png" width="384" height="384"/>
+        <image name="money" width="512" height="512"/>
         <image name="phone.png" width="384" height="384"/>
     </resources>
 </document>
