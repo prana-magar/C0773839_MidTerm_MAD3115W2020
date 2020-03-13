@@ -27,8 +27,7 @@ class ObjectManager {
         // Create admin objects
         let admin1 = Admin(id: "1", userName: "rana_prakash", password: "hello")
         adminsObj.append(admin1)
-        
-        self.loadObjects()
+    
     }
     
     static func getInstance() -> ObjectManager{
@@ -75,6 +74,9 @@ extension ObjectManager {
     
     
     func loadObjects(){
+        self.internetProvider.removeAll()
+        self.mobileProvider.removeAll()
+        self.hydroProvider.removeAll()
         var fidoPhoneProvider = CellPhoneProvider(name: "FIDO",
                                      baseRate: 10,
                                      gbUsedRate: 5.0,
