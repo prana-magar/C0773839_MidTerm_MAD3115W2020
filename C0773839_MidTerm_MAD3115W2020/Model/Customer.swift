@@ -10,6 +10,7 @@ import Foundation
 class Customer : Person
 {
     
+    lazy var billDict: [String: Bill] = [String: Bill]()
     
     var name:String  {
         return self.firstName + " " + self.lastName
@@ -32,5 +33,9 @@ extension Customer{
         default:
             return "placeholderHeadshotFemale.jpg"
         }
+    }
+    
+    func addBill(bill: Bill) {
+        self.billDict.updateValue(bill, forKey: bill.id)
     }
 }
