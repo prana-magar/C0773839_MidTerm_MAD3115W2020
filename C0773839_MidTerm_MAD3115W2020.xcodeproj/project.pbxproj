@@ -32,6 +32,7 @@
 		AB6DE4D6241B0EBC007E7668 /* InternetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DE4D5241B0EBC007E7668 /* InternetProvider.swift */; };
 		AB6DE4D8241B0EE0007E7668 /* InternetBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DE4D7241B0EE0007E7668 /* InternetBill.swift */; };
 		AB6DE4DA241B0F0B007E7668 /* MobileBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DE4D9241B0F0B007E7668 /* MobileBill.swift */; };
+		AB6DE4DE241BC09D007E7668 /* BillDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DE4DD241BC09D007E7668 /* BillDetailViewController.swift */; };
 		AB8C6C23241321D7007FB758 /* AddCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8C6C22241321D7007FB758 /* AddCustomerViewController.swift */; };
 		AB8C6C252413FF8B007FB758 /* TextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8C6C242413FF8B007FB758 /* TextField+Extensions.swift */; };
 		AB8C6C4B24144822007FB758 /* headshot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB8C6C4A24144822007FB758 /* headshot.jpg */; };
@@ -73,6 +74,7 @@
 		AB6DE4D5241B0EBC007E7668 /* InternetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetProvider.swift; sourceTree = "<group>"; };
 		AB6DE4D7241B0EE0007E7668 /* InternetBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetBill.swift; sourceTree = "<group>"; };
 		AB6DE4D9241B0F0B007E7668 /* MobileBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileBill.swift; sourceTree = "<group>"; };
+		AB6DE4DD241BC09D007E7668 /* BillDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailViewController.swift; sourceTree = "<group>"; };
 		AB8C6C22241321D7007FB758 /* AddCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerViewController.swift; sourceTree = "<group>"; };
 		AB8C6C242413FF8B007FB758 /* TextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extensions.swift"; sourceTree = "<group>"; };
 		AB8C6C4A24144822007FB758 /* headshot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headshot.jpg; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				ABFDBF292411DA9C0077F025 /* CustomerListViewController.swift */,
 				ABFDBF2F2411E8C90077F025 /* CustomerDetailViewController.swift */,
 				AB8C6C22241321D7007FB758 /* AddCustomerViewController.swift */,
+				AB6DE4DD241BC09D007E7668 /* BillDetailViewController.swift */,
 			);
 			path = C0773839_MidTerm_MAD3115W2020;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			files = (
 				AB06C24B24101F2400961991 /* LoginViewController.swift in Sources */,
 				AB06C275241061E600961991 /* Double+Extensions.swift in Sources */,
+				AB6DE4DE241BC09D007E7668 /* BillDetailViewController.swift in Sources */,
 				ABFDBF302411E8C90077F025 /* CustomerDetailViewController.swift in Sources */,
 				AB06C271241061BE00961991 /* String+Extensions.swift in Sources */,
 				AB06C24724101F2400961991 /* AppDelegate.swift in Sources */,
