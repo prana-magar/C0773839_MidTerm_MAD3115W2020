@@ -16,11 +16,31 @@ class CustomTableCell: UITableViewCell{
 }
 
 class CustomerListViewController: UIViewController {
+    
+   
+  var resultSearchController = UISearchController()
+    var filteredData: [Customer] = [Customer]()
    
     @IBOutlet weak var customerListTable: UITableView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        // results searcher
+        resultSearchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.dimsBackgroundDuringPresentation = false
+            controller.searchBar.sizeToFit()
+
+            customerListTable.tableHeaderView = controller.searchBar
+
+            return controller
+        })()
+        
+        self.customerListTable.reloadData()
+        
         self.customerListTable.delegate = self
         self.customerListTable.dataSource = self
         self.navigationItem.title = "Customers"
@@ -66,13 +86,29 @@ extension CustomerListViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ObjectManager.getInstance().getCustomerList().count
+        if  (resultSearchController.isActive) {
+            return self.filteredData.count
+        }
+        else{
+            return ObjectManager.getInstance().getCustomerList().count
+        }
+        
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "customerCell") as! CustomTableCell
         
-        let customers = ObjectManager.getInstance().getCustomerList()
+        var customers = [Customer]()
+        if (resultSearchController.isActive) {
+            customers = self.filteredData
+            
+        }
+        else{
+            customers = ObjectManager.getInstance().getCustomerList()
+        }
+        
+        
         
 //        cell?.textLabel?.text = customers[indexPath.row].name
         let customer = customers[indexPath.row]
@@ -112,4 +148,23 @@ extension CustomerListViewController: UITableViewDelegate, UITableViewDataSource
         customerDetailView.customer = selectedCustomer
         self.navigationController?.pushViewController(customerDetailView, animated: true)
     }
+}
+
+extension CustomerListViewController: UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    
+        var customers = ObjectManager.getInstance().getCustomerList()
+        var filteredData = [Customer]()
+        for customer in customers{
+            if customer.name.lowercased().contains(searchController.searchBar.text!.lowercased()){
+                filteredData.append(customer)
+            }
+        }
+        self.filteredData = filteredData
+        self.customerListTable.reloadData()
+    }
+    
+  
+    
 }
