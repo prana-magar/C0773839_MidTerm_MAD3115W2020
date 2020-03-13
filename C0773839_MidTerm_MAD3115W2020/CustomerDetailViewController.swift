@@ -8,8 +8,16 @@
 
 import UIKit
 
-class CustomerDetailViewController: UIViewController {
+class CustomBillTableCell: UITableViewCell{
+    
+    @IBOutlet weak var labelBillId: UILabel!
+    
+}
 
+
+class CustomerDetailViewController: UIViewController {
+    @IBOutlet weak var tblBills: UITableView!
+    
    
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
@@ -22,6 +30,8 @@ class CustomerDetailViewController: UIViewController {
     var customer: Customer?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tblBills.dataSource = self
+        self.tblBills.delegate = self
 
         if let customer = self.customer{
             self.nameLabel.text = customer.name
@@ -57,4 +67,19 @@ class CustomerDetailViewController: UIViewController {
     }
     */
 
+}
+
+
+extension CustomerDetailViewController: UITableViewDataSource, UITableViewDelegate{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomBillTableCell") as! CustomBillTableCell
+        cell.labelBillId.text = "Test"
+        return cell
+    }
+    
+    
 }
