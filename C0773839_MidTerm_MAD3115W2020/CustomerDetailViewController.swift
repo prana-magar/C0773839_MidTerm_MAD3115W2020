@@ -48,8 +48,8 @@ class CustomerDetailViewController: UIViewController {
         
         
         
-        self.profileImageView.frame.size.height = 150
-        self.profileImageView.frame.size.width = 150
+        self.profileImageView.frame.size.height = 100
+        self.profileImageView.frame.size.width = 100
         self.profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
         self.profileImageView.layer.borderWidth = 2.0
         
@@ -60,7 +60,12 @@ class CustomerDetailViewController: UIViewController {
     
     
     
-
+    @IBAction func btnBillSave(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let addCustomerView = storyBoard.instantiateViewController(identifier: "BillDetailViewController")
+        self.navigationController?.pushViewController(addCustomerView, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

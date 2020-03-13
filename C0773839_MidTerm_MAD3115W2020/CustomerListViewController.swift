@@ -95,6 +95,8 @@ extension CustomerListViewController: UITableViewDelegate, UITableViewDataSource
         return 5
     }
     
+    
+    
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return ObjectManager.getInstance().getCustomerList().count
