@@ -66,7 +66,7 @@ extension CustomerListViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return ObjectManager.getInstance().getCustomerList().count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,7 +75,7 @@ extension CustomerListViewController: UITableViewDelegate, UITableViewDataSource
         let customers = ObjectManager.getInstance().getCustomerList()
         
 //        cell?.textLabel?.text = customers[indexPath.row].name
-        let customer = customers[indexPath.section]
+        let customer = customers[indexPath.row]
         let imageName = customer.profileImageName ?? customer.placeholderImageName
         cell.profileImageView.image = UIImage(named: imageName)
         
@@ -87,7 +87,7 @@ extension CustomerListViewController: UITableViewDelegate, UITableViewDataSource
         
         cell.layer.borderWidth = 1.0
         cell.layer.borderColor = CGColor(srgbRed: 0, green: 0.749, blue: 0.7882, alpha: 1.0)
-        cell.nameLabel.text = customers[indexPath.section].name
+        cell.nameLabel.text = customers[indexPath.row].name
         return cell
     }
     
@@ -99,13 +99,13 @@ extension CustomerListViewController: UITableViewDelegate, UITableViewDataSource
     
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return ObjectManager.getInstance().getCustomerList().count
+        return 1
     }
 
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let customers = ObjectManager.getInstance().getCustomerList()
-        let selectedCustomer = customers[indexPath.section]
+        let selectedCustomer = customers[indexPath.row]
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let customerDetailView = storyboard.instantiateViewController(identifier: "CustomerDetailView") as CustomerDetailViewController
