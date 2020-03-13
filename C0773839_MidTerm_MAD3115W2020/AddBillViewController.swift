@@ -24,6 +24,16 @@ class AddBillViewController: UIViewController {
         
         self.labelBillType.inputView = pickerView
         
+        
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        
+        labelBillDate.inputView = datePicker
+        
+        datePicker.addTarget(self, action: #selector(AddBillViewController.dateChanged(datePicker:)), for: .valueChanged)
+        
+        
+        
         let tapGuesture = UITapGestureRecognizer(target: self, action: #selector(AddBillViewController.viewTapped(guestureRecognizer:)))
         view.addGestureRecognizer(tapGuesture)
 
@@ -33,6 +43,12 @@ class AddBillViewController: UIViewController {
     @objc func viewTapped(guestureRecognizer: UITapGestureRecognizer) {
         view.endEditing(true)
     }
+    
+    @objc func dateChanged(datePicker: UIDatePicker) {
+           self.labelBillDate.text = datePicker.date.printFormat(format: "MMMM/dd/yyyy")
+           //view.endEditing(true)
+       }
+       
     
 }
 
