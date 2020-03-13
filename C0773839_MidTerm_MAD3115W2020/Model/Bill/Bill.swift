@@ -12,6 +12,17 @@ enum BillType: CaseIterable {
     case Hydro
     case Mobile
     case Internet
+    
+    static func getBillType(billString: String) -> BillType{
+        switch billString.lowercased() {
+        case "hydro":
+            return BillType.Hydro
+        case "mobile":
+            return BillType.Mobile
+        default:
+            return BillType.Internet
+        }
+    }
 }
 
 

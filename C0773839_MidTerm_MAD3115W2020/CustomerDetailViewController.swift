@@ -62,8 +62,16 @@ class CustomerDetailViewController: UIViewController {
     
     @IBAction func btnBillSave(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let addCustomerView = storyBoard.instantiateViewController(identifier: "BillDetailViewController")
-        self.navigationController?.pushViewController(addCustomerView, animated: true)
+        let addBillView = storyBoard.instantiateViewController(identifier: "AddBillViewController") as! AddBillViewController
+        addBillView.customer = self.customer
+        self.navigationController?.pushViewController(addBillView, animated: true)
+//        self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tblBills.reloadData()
+        self.labelBillTotal.text =  self.customer?.getTotalBill().priceFormat()
     }
     
     /*

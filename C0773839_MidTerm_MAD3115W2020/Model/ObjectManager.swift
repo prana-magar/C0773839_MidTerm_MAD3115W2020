@@ -17,6 +17,10 @@ class ObjectManager {
     lazy var mobileBillDict: [String: MobileBill] = [String: MobileBill]()
     lazy var hydroBillDict: [String: HydroBill] = [String: HydroBill]()
     lazy var internetBillDict: [String: InternetBill] = [String: InternetBill]()
+    lazy var internetProvider: [InternetProvider] = [InternetProvider]()
+    lazy var mobileProvider: [CellPhoneProvider] = [CellPhoneProvider]()
+    lazy var hydroProvider: [HydroProvider] = [HydroProvider]()
+
 
     private init(){
         
@@ -75,29 +79,44 @@ extension ObjectManager {
                                      baseRate: 10,
                                      gbUsedRate: 5.0,
                                      minuteUsedRate: 2)
+        self.mobileProvider.append(fidoPhoneProvider)
 
         var publicMobilePhoneProvider = CellPhoneProvider(name: "Public Mobile",
                                                             baseRate: 7,
                                                             gbUsedRate:4.0,
                                                             minuteUsedRate: 1.5)
+        self.mobileProvider.append(publicMobilePhoneProvider)
 
         var freedomMobilePhoneProvider = CellPhoneProvider(name: "Freedom",
                                                                baseRate: 8,
                                                                gbUsedRate:7.0,
                                                                minuteUsedRate: 4.5)
+        self.mobileProvider.append(freedomMobilePhoneProvider)
         // All InternetProviders
         var bellInternetProvider = InternetProvider(name: "Bell",
                                                     baseRate: 10,
                                                     gbUsedRate: 0.5)
+        self.internetProvider.append(bellInternetProvider)
 
         var rogersInternetProvider = InternetProvider(name: "Rogers",
                                                     baseRate: 7,
                                                     gbUsedRate: 0.9)
+        self.internetProvider.append(rogersInternetProvider)
+
 
         // All HydroProviders
         var justEnergyHydroProvider = HydroProvider(name: "Just Energy",
                                                     baseRate: 5,
                                                     unitRate: 5.5)
+        self.hydroProvider.append(justEnergyHydroProvider)
+        
+        // All HydroProviders
+        var bellHydro = HydroProvider(name: "Bell Energy",
+                                                    baseRate: 6,
+                                                    unitRate: 5.5)
+        self.hydroProvider.append(bellHydro)
+        
+        
 
         // Specify date components
         var dateComponents = DateComponents()
@@ -182,5 +201,32 @@ extension ObjectManager {
         cus2.addBill(bill: hydroBill2)
 
         self.addCustomer(customer: cus2)
+    }
+    
+    func getHydroProvider(name: String) -> HydroProvider {
+        for provider in self.hydroProvider{
+            if name == provider.name{
+                return provider
+            }
+        }
+        return self.hydroProvider[0]
+    }
+    
+    func getInternetProvider(name: String) -> InternetProvider {
+        for provider in self.internetProvider{
+            if name == provider.name{
+                return provider
+            }
+        }
+        return self.internetProvider[0]
+    }
+    
+    func getMobileProvider(name: String) -> CellPhoneProvider {
+        for provider in self.mobileProvider{
+            if name == provider.name{
+                return provider
+            }
+        }
+        return self.mobileProvider[0]
     }
 }

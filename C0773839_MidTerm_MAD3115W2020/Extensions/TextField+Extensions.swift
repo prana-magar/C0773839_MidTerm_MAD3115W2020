@@ -31,4 +31,10 @@ extension UITextField{
         
         self.layer.add(color, forKey: "borderColor")
     }
+    
+    func animateVisibility( hidden: Bool) {
+        UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.isHidden = hidden
+        })
+    }
 }
