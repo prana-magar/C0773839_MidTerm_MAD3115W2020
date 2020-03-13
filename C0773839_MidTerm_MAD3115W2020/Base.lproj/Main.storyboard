@@ -518,7 +518,7 @@
         <!--Add Bill-->
         <scene sceneID="zIj-iH-Pie">
             <objects>
-                <viewController storyboardIdentifier="BillDetailViewController" id="my5-zk-j58" customClass="BillDetailViewController" customModule="C0773839_MidTerm_MAD3115W2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BillDetailViewController" id="my5-zk-j58" customClass="AddBillViewController" customModule="C0773839_MidTerm_MAD3115W2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FHt-J3-V6q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -548,6 +548,11 @@
                     <navigationItem key="navigationItem" title="Add Bill" id="SNb-NB-ZhW">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="rbc-Vy-W5h"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="labelBillAmount" destination="eYR-v7-USq" id="t3v-2G-0ej"/>
+                        <outlet property="labelBillDate" destination="36h-e6-3NL" id="hUj-KP-qSZ"/>
+                        <outlet property="labelBillType" destination="O00-FV-dyV" id="UPe-FT-1sr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xN2-ym-NLY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
