@@ -25,6 +25,13 @@
 		AB06C273241061D200961991 /* Float+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C272241061D200961991 /* Float+Extensions.swift */; };
 		AB06C275241061E600961991 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C274241061E600961991 /* Double+Extensions.swift */; };
 		AB06C2772410620100961991 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06C2762410620100961991 /* Date+Extensions.swift */; };
+		AB6DE4CD241B0DA4007E7668 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DE4CC241B0DA4007E7668 /* Bill.swift */; };
+		AB6DE4CF241B0DE8007E7668 /* HydroBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DE4CE241B0DE8007E7668 /* HydroBill.swift */; };
+		AB6DE4D2241B0E8B007E7668 /* HydroProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DE4D1241B0E8B007E7668 /* HydroProvider.swift */; };
+		AB6DE4D4241B0EA9007E7668 /* CellPhoneProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DE4D3241B0EA9007E7668 /* CellPhoneProvider.swift */; };
+		AB6DE4D6241B0EBC007E7668 /* InternetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DE4D5241B0EBC007E7668 /* InternetProvider.swift */; };
+		AB6DE4D8241B0EE0007E7668 /* InternetBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DE4D7241B0EE0007E7668 /* InternetBill.swift */; };
+		AB6DE4DA241B0F0B007E7668 /* MobileBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DE4D9241B0F0B007E7668 /* MobileBill.swift */; };
 		AB8C6C23241321D7007FB758 /* AddCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8C6C22241321D7007FB758 /* AddCustomerViewController.swift */; };
 		AB8C6C252413FF8B007FB758 /* TextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8C6C242413FF8B007FB758 /* TextField+Extensions.swift */; };
 		AB8C6C4B24144822007FB758 /* headshot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB8C6C4A24144822007FB758 /* headshot.jpg */; };
@@ -59,6 +66,13 @@
 		AB06C272241061D200961991 /* Float+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extensions.swift"; sourceTree = "<group>"; };
 		AB06C274241061E600961991 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		AB06C2762410620100961991 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		AB6DE4CC241B0DA4007E7668 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		AB6DE4CE241B0DE8007E7668 /* HydroBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydroBill.swift; sourceTree = "<group>"; };
+		AB6DE4D1241B0E8B007E7668 /* HydroProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydroProvider.swift; sourceTree = "<group>"; };
+		AB6DE4D3241B0EA9007E7668 /* CellPhoneProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPhoneProvider.swift; sourceTree = "<group>"; };
+		AB6DE4D5241B0EBC007E7668 /* InternetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetProvider.swift; sourceTree = "<group>"; };
+		AB6DE4D7241B0EE0007E7668 /* InternetBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetBill.swift; sourceTree = "<group>"; };
+		AB6DE4D9241B0F0B007E7668 /* MobileBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileBill.swift; sourceTree = "<group>"; };
 		AB8C6C22241321D7007FB758 /* AddCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerViewController.swift; sourceTree = "<group>"; };
 		AB8C6C242413FF8B007FB758 /* TextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extensions.swift"; sourceTree = "<group>"; };
 		AB8C6C4A24144822007FB758 /* headshot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headshot.jpg; sourceTree = "<group>"; };
@@ -137,6 +151,8 @@
 		AB06C25F24105CC400961991 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB6DE4D0241B0E79007E7668 /* Provider */,
+				AB6DE4CB241B0D91007E7668 /* Bill */,
 				AB06C26324105F2000961991 /* ObjectManager.swift */,
 				AB06C2652410600500961991 /* Admin.swift */,
 				AB06C2672410606F00961991 /* Person.swift */,
@@ -166,6 +182,27 @@
 				AB8C6C242413FF8B007FB758 /* TextField+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AB6DE4CB241B0D91007E7668 /* Bill */ = {
+			isa = PBXGroup;
+			children = (
+				AB6DE4CC241B0DA4007E7668 /* Bill.swift */,
+				AB6DE4CE241B0DE8007E7668 /* HydroBill.swift */,
+				AB6DE4D7241B0EE0007E7668 /* InternetBill.swift */,
+				AB6DE4D9241B0F0B007E7668 /* MobileBill.swift */,
+			);
+			path = Bill;
+			sourceTree = "<group>";
+		};
+		AB6DE4D0241B0E79007E7668 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				AB6DE4D1241B0E8B007E7668 /* HydroProvider.swift */,
+				AB6DE4D3241B0EA9007E7668 /* CellPhoneProvider.swift */,
+				AB6DE4D5241B0EBC007E7668 /* InternetProvider.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,15 +290,22 @@
 				AB06C24724101F2400961991 /* AppDelegate.swift in Sources */,
 				AB8C6C252413FF8B007FB758 /* TextField+Extensions.swift in Sources */,
 				AB06C26224105D2C00961991 /* PasswordUtil.swift in Sources */,
+				AB6DE4D8241B0EE0007E7668 /* InternetBill.swift in Sources */,
 				AB8C6C23241321D7007FB758 /* AddCustomerViewController.swift in Sources */,
 				AB06C26424105F2000961991 /* ObjectManager.swift in Sources */,
+				AB6DE4DA241B0F0B007E7668 /* MobileBill.swift in Sources */,
+				AB6DE4D2241B0E8B007E7668 /* HydroProvider.swift in Sources */,
+				AB6DE4CF241B0DE8007E7668 /* HydroBill.swift in Sources */,
 				AB06C26E2410614A00961991 /* Address.swift in Sources */,
 				ABFDBF2A2411DA9C0077F025 /* CustomerListViewController.swift in Sources */,
+				AB6DE4D6241B0EBC007E7668 /* InternetProvider.swift in Sources */,
 				AB06C26C2410611F00961991 /* Validations.swift in Sources */,
 				AB06C26A241060F000961991 /* Contact.swift in Sources */,
 				AB06C2772410620100961991 /* Date+Extensions.swift in Sources */,
 				ABFDBF2C2411DDD10077F025 /* Customer.swift in Sources */,
+				AB6DE4D4241B0EA9007E7668 /* CellPhoneProvider.swift in Sources */,
 				AB06C2682410606F00961991 /* Person.swift in Sources */,
+				AB6DE4CD241B0DA4007E7668 /* Bill.swift in Sources */,
 				AB06C24924101F2400961991 /* SceneDelegate.swift in Sources */,
 				AB06C273241061D200961991 /* Float+Extensions.swift in Sources */,
 				AB06C2662410600500961991 /* Admin.swift in Sources */,
