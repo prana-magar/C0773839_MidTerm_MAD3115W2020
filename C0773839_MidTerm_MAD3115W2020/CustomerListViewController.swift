@@ -147,6 +147,7 @@ extension CustomerListViewController: UITableViewDelegate, UITableViewDataSource
         let customerDetailView = storyboard.instantiateViewController(identifier: "CustomerDetailView") as CustomerDetailViewController
         customerDetailView.customer = selectedCustomer
         self.navigationController?.pushViewController(customerDetailView, animated: true)
+        self.resultSearchController.isActive = false
     }
 }
 
