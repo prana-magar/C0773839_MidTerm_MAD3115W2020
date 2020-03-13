@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum BillType {
+enum BillType: CaseIterable {
     case Hydro
     case Mobile
     case Internet
