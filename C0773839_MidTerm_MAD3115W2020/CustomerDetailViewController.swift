@@ -97,7 +97,18 @@ extension CustomerDetailViewController: UITableViewDataSource, UITableViewDelega
         cell.labelBillId.text = self.customer?.getBills()[indexPath.row].id
         cell.labelBillDate.text = self.customer?.getBills()[indexPath.row].date.printFormat()
         cell.labelBillAmount.text = self.customer?.getBills()[indexPath.row].total.priceFormat()
-
+        cell.layer.borderWidth = 3.0
+        
+        
+        switch ObjectManager.getInstance().getBillType(bill: (self.customer?.getBills()[indexPath.row])!)  {
+        case BillType.Hydro:
+            cell.layer.borderColor = UIColor.red.withAlphaComponent(0.3).cgColor
+        case BillType.Internet:
+             cell.layer.borderColor = UIColor.blue.withAlphaComponent(0.3).cgColor
+        default:
+            cell.layer.borderColor = UIColor.green.withAlphaComponent(0.3).cgColor
+        }
+        
         return cell
     }
     

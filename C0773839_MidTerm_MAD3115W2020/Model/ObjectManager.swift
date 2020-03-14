@@ -65,6 +65,17 @@ class ObjectManager {
         }
         return randomString(len: 8)
     }
+    
+    func getBillType(bill: Bill) -> BillType {
+        if self.hydroBillDict.keys.contains(bill.id){
+            return BillType.Hydro
+        }
+        if self.internetBillDict.keys.contains(bill.id){
+            return BillType.Internet
+        }
+        return BillType.Mobile
+        
+    }
 
     
 }
